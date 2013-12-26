@@ -1,0 +1,23 @@
+# Makefile
+
+SRC	= stream.c
+OBJ	= stream.o
+BIN	= stream
+
+
+CC	= gcc
+CFLAGS	= -fopenmp -O3
+LDLIBS	=
+
+#: $(BIN)
+
+
+$(BIN): $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(BIN)   $(LDLIBS)
+
+$(OBJ): 
+	@$(CC) $(CFLAGS) -c $(SRC) -o $(OBJ)
+
+clean:
+	rm -f $(BIN) $(OBJ)
+
